@@ -3,6 +3,9 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "baseUrl": ".",
+     "paths": {
+      "@unisize/*": ["packages/*/src"]
+    },
     "composite": true,
     "declaration": true,
     "plugins": [
@@ -12,5 +15,10 @@
       }
     ]
   },
-  "include": ["@types/*", "src/**/*", "src/**/*.json", ".storybook/*"]
+  "include": [
+    "@types/*",
+    "src/**/*",
+    "src/**/*.json",
+    ".storybook/*",
+  ]
 }

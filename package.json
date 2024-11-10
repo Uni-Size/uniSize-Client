@@ -1,7 +1,8 @@
 {
-  "name": "uniSize-Client",
+  "name": "unisize-client",
   "packageManager": "yarn@4.5.1",
   "devDependencies": {
+    "@types/react": "^18.3.12",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
     "eslint": "^9.14.0",
@@ -25,7 +26,8 @@
   },
   "scripts": {
     "lint": "eslint ./packages --ext .ts,.tsx,.js,.jsx --cache",
-    "storybook": "yarn workspace @storybook",
+    "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "storybook": "yarn workspace @unisize/storybook",
     "user": "yarn workspace user",
     "postinstall": "husky install",
     "prepare": "husky"
