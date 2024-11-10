@@ -2,17 +2,36 @@
   "name": "uniSize-Client",
   "packageManager": "yarn@4.5.1",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },
   "workspaces": [
     "packages/*"
   ],
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --ext .tsx --ext .ts src/",
+      "prettier --write"
+    ]
+  },
   "scripts": {
     "lint": "eslint ./packages --ext .ts,.tsx,.js,.jsx --cache",
     "storybook": "yarn workspace @storybook",
     "user": "yarn workspace user",
     "postinstall": "husky install",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2"
   }
 }
